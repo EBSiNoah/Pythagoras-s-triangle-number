@@ -1,0 +1,17 @@
+Pythagoras's triangle number
+
+I try multiple repeat to find out them.
+First, as a common way, I repeat each value until the end.
+Second, to reduce reiteration, I use some formula.
+(a,b,c) = (m^2 - n^2, 2*m*n, m^2 + n^2)
+But, both results are different. This is my next things to figure out.
+----------------------09.25-------------------------------
+The reason of different result between common way and Formula is because condition of b value in formula.
+As a natural number, b is always mutiple of 2. That is why both results are different.
+Next, I make a vector which has index as same as length of each side of triangle and value as same as square of them, so I don't need to calculate every loop.
+But this method is also needs long times, so exit condition is most important to reduce time. 
+There are three exit conditions.
+First, maximun length range of side c is 50 and its square is 2500. Value of a^2+b2 should not over it.
+Second, set start loop point value of c at next of the b and if a^2+b^2<(b+1)^2 is true, we don't need to loop up next c value.
+Third, when you find out correct value then exit.
+Those conditions less the times.
