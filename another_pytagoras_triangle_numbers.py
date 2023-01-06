@@ -47,6 +47,7 @@ def pytriA(number):
     ep=0
     mid=0
     loopcount=0
+    isinsert=False
     for i in range(num+1):
         sideset.append(i*i)
     while(b<=num):
@@ -56,6 +57,7 @@ def pytriA(number):
                 break
             sp=b+1
             ep=num
+            isinsert=False
             while(sp<=ep):
                 mid=(sp+ep)//2
                 print(sp,ep,mid,"is work?")
@@ -64,8 +66,11 @@ def pytriA(number):
                     ep=mid-1
                 elif(sideset[a]+sideset[b]>sideset[mid]):
                     sp=mid+1
-            c=mid
-            if(sideset[a]+sideset[b]==sideset[c]):
+                elif(sideset[a]+sideset[b]==sideset[mid]):
+                    c=mid
+                    isinsert=True
+                    break
+            if(isinsert):
                 output.append([a,b,c])
             a+=1
         b+=1
